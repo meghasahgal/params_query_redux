@@ -1,13 +1,15 @@
-import './SingleArticle.css';
+import "./SingleArticle.css";
+import { useParams } from "react-router-dom";
+import ArticleList from "../ArticleList";
 
-const SingleArticle = () => {
+// place articles as arg
+const SingleArticle = ({ articles }) => {
+  const { id } = useParams();
   return (
-    <div className='singleArticle'>
-      <h1>Why Am I At Home</h1>
-      <img
-        src='https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Frobcain%2Ffiles%2F2017%2F10%2FKevin-Home-Alone.jpg'
-        alt='home'
-      />
+    <div className="singleArticle">
+      <h1>{articles[id].title}</h1>
+      <img src={articles[id].imageUrl} alt="" />
+      <p>{articles[id].body}</p>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex esse
         laboriosam officia accusantium veritatis fugiat exercitationem vero
