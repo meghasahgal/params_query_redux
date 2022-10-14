@@ -9,6 +9,11 @@ export const loadArticles = () => {
   };
 };
 
+// add a func
+export const findArticleById = id => (store)=> {
+  const articles = store.articleState.entries;
+  return articles.find((el)=>el.id === id)
+}
 const initialState = { entries: [], isLoading: true };
 
 const articleReducer = (state = initialState, action) => {

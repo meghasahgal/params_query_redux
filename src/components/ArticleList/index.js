@@ -23,7 +23,8 @@ const ArticleList = () => {
 
       <Switch>
         <Route path='/article/:id'>
-          <SingleArticle />
+          <SingleArticle/>
+          {/* <SingleArticle articles={articles}/> */}
         </Route>
       </Switch>
     </div>
